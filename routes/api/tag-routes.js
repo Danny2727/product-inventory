@@ -69,7 +69,7 @@ router.put('/:id', (req, res) => {
     }
   })
   .then(() => {
-    res.status(204).end();
+    res.status(200).json({ message: "Record Updated Successfully" });
   })
   .catch((err) => {
     res.json(err.message);
@@ -89,7 +89,7 @@ router.delete('/:id', async (req, res) => {
       res.status(404).json({ message: 'No tag found with this id!' });
       return;
     }
-    res.status(204).end();
+    res.status(200).json({ message: 'Has been successfully deleted!'});
   } catch (err) {
     res.status(500).json(err);
   }
